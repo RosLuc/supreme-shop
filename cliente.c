@@ -6,6 +6,8 @@
 #include "cliente.h"
 #define DELETED -1
 
+
+
 //Definicaoo da estrutura com informaacoes de um cliente
 struct cliente{
 	int status;
