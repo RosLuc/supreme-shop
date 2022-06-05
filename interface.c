@@ -24,7 +24,7 @@ void opcoes_cliente(Hash* TabCl){
 				//hshcl_retirarcompleto(TabCl);
                 break;
             case OPCA3:
-                //hshcl_consulta(TabCl);
+                hshcl_consulta(TabCl);
                 break;
             case OPCA4:
                // hshcl_imprime(TabCl);
@@ -70,3 +70,6 @@ void opcoes_do_sistema(Hash* TabCl){
         }
     }while(!saida);
 }
+
+
+

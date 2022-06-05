@@ -18,7 +18,6 @@ struct cliente{
     char cep[15];
 	int numero;
 	float debito;
-	char data[9];
 };
 
 //Estrutura da hash
@@ -109,8 +108,8 @@ int hshcl_importa(Hash* tab){
 			system("pause");
 			return 0;
 		}
-        int n = sscanf(linha,"%80[^\t]\t%d\t%14[^\t]\t%19[^\t]\t%29[^\t]\t%d\t%29[^\t]\t%15[^\t]\t%f\t%8[^\t]\t-\t%6[^\n]", c->nome, &c->cpf,
-					c->telefone,c->cidade , c->rua, &c->numero, c->bairro, c->cep, &c->debito, c->data);
+        int n = sscanf(linha,"%80[^\t]\t%d\t%14[^\t]\t%19[^\t]\t%29[^\t]\t%d\t%29[^\t]\t%15[^\t]\t%f\t%8[^\n]", c->nome, &c->cpf,
+					c->telefone,c->cidade , c->rua, &c->numero, c->bairro, c->cep, &c->debito);
 		c->status=0;
         if(n > 0){
             if(strcmp(c->nome, "NOME")!=0)
@@ -128,7 +127,7 @@ void hshcl_salva(Hash* tab){
 		system("pause");
 		exit(1);
 	}
-	fprintf(arq_cli, "NOME\t|CPF\t|TELEFONE\t|CIDADE\t|RUA\t|NUMERO\t|BAIRRO\t|CEP\t|DEBITO\t|DATA\n");
+	fprintf(arq_cli, "NOME\t|CPF\t|TELEFONE\t|CIDADE\t|RUA\t|NUMERO\t|BAIRRO\t|CEP\t|DEBITO\n");
 	int i;
 	for(i=0;i<tab->dim;i++){
 		if(tab->v[i]!=NULL && tab->v[i]->status!=DELETED){
@@ -141,7 +140,6 @@ void hshcl_salva(Hash* tab){
         	fprintf(arq_cli,"%s\t", tab->v[i]->bairro);
         	fprintf(arq_cli,"%s\t", tab->v[i]->cep);
         	fprintf(arq_cli,"%.2f\t", tab->v[i]->debito);
-        	fprintf(arq_cli,"%s\t", tab->v[i]->data);
 		}
 	}
 	fclose(arq_cli);
@@ -197,7 +195,6 @@ void hshcl_cadastra(Hash* tab){
 		n=scanf("%14[^\n]", c->cep);
 		LimpaBuffer();
 		c->debito=0.00f;
-		_strdate(c->data);
 		c->status=0;
 		printf("\n----------------------------------------------------------------------------");
 		Cliente* cl=hshcl_busca(tab,c->cpf);
@@ -218,6 +215,43 @@ void hshcl_cadastra(Hash* tab){
 		}
 		Limpa_Tela();
 		v=sairdafuncao();
+	}while(v==0);
+}
+static void imprime(Cliente* c){
+	printf(" \n\tNome: %s", c->nome);
+	printf(" \tCPF: %d", c->cpf);
+	printf(" \tTelefone: %s", c->telefone);
+	printf(" \n\tCidade: %s", c->cidade);
+	printf(" \tRua: %s", c->rua);
+	printf(" \tNumero: %d", c->numero);
+	printf(" \n\tBairro: %s", c->bairro);
+	printf(" \tCEP: %s", c->cep);
+	printf(" \tDebito: %.2f", c->debito);
+}
+
+void hshcl_consulta(Hash* tab){
+	int v=0,cpf,n=1;
+	do{
+		Limpa_Tela();
+		mensagem_inicial();
+		printf("\n\t\t\tCONSULTA CLIENTE! Informe:");
+		do{
+			printf("\n\tInforme apenas os nÃºmeros do CPF(EX.:08673133637)- \n\tCPF: ");
+			n = scanf("%d", &cpf);
+			LimpaBuffer();
+		}while(n == 0);
+		Cliente* c= hshcl_busca(tab,cpf);
+		if(c!=NULL && c->status!=DELETED){
+		   	imprime(c);
+			printf("\n----------------------------------------------------------------------------\n");
+		}
+		else{
+			printf("\n----------------------------------------------------------------------------");
+			printf("\n\tNao possui Cliente com esse cpf cadastrado, verifique se informou o cpf corretamente!\n");
+		}
+		system("pause");
+		Limpa_Tela();
+		v = sairdafuncao();
 	}while(v==0);
 }
 

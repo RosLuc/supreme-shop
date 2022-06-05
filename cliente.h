@@ -15,6 +15,8 @@ int hshcl_importa(Hash* tab);
 void hshcl_salva(Hash* tab);
 Cliente* hshcl_busca (Hash* tab, int cpf);
 void hshcl_cadastra(Hash* tab);
+static void imprime(Cliente* c);
+void hshcl_consulta(Hash* tab);
 
 #endif
 
