@@ -19,13 +19,13 @@ int main(int argc, char *argv[]) {
     	system("pause");
 		return 0;
 	}*/
-	//Cliente* cliente = hshcl_cria();
-	//if(!hshcl_importa(cliente)){
-    	//printf("\n\tErro ao importar usuario do arquivo!\n");
- 		//free(cliente);
-    	//system("pause");
-		//return 0;
-	//}
+	Cliente* cliente = hshcl_cria();
+	if(!hshcl_importa(cliente)){
+    	printf("\n\tErro ao importar usuario do arquivo!\n");
+ 		free(cliente);
+    	system("pause");
+		return 0;
+	}
     do{
 		Limpa_Tela();
 		mensagem_inicial();
@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
                     //interface_usuarios(sys, usu);
 
                 //   }
-                opcoes_do_sistema();
+                opcoes_do_sistema(cliente);
 
                 break;
             case OPCAO2:

@@ -48,7 +48,7 @@
 	<time.h>
 	"cliente.h"
 
-1653840086 source:c:\users\public\documents\supreme-shop\cliente.c
+1654460292 source:c:\users\public\documents\supreme-shop\cliente.c
 	<stdio.h>
 	<string.h>
 	<locale.h>
@@ -56,12 +56,12 @@
 	<time.h>
 	"cliente.h"
 
-1653840095 c:\users\public\documents\supreme-shop\cliente.h
+1654459136 c:\users\public\documents\supreme-shop\cliente.h
 	"interacao_menus.h"
 
-1653854156 c:\users\public\documents\supreme-shop\interacao_menus.h
+1653856176 c:\users\public\documents\supreme-shop\interacao_menus.h
 
-1653775482 source:c:\users\public\documents\supreme-shop\interacao_menus.c
+1653856176 source:c:\users\public\documents\supreme-shop\interacao_menus.c
 	<stdio.h>
 	<stdarg.h>
 	<string.h>
@@ -69,7 +69,7 @@
 	<stdlib.h>
 	"interacao_menus.h"
 
-1653853822 source:c:\users\public\documents\supreme-shop\interface.c
+1654459176 source:c:\users\public\documents\supreme-shop\interface.c
 	<stdio.h>
 	<string.h>
 	<locale.h>
@@ -77,7 +77,7 @@
 	<time.h>
 	"cliente.h"
 
-1653840038 source:c:\users\public\documents\supreme-shop\main.c
+1654459016 source:c:\users\public\documents\supreme-shop\main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdarg.h>
