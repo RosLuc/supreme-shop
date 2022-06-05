@@ -123,7 +123,7 @@ int hshcl_importa(Hash* tab){
 }
 
 void hshcl_salva(Hash* tab){
-	FILE* arq_cli = fopen("CLIENTES.txt", "at");
+	FILE* arq_cli = fopen("CLIENTES.txt", "wt");
 	if(arq_cli == NULL){
 		printf("\n\tErro ao abrir o arquivo CLIENTES.txt!\n");
 		system("pause");
@@ -238,7 +238,7 @@ void hshcl_consulta(Hash* tab){
 		mensagem_inicial();
 		printf("\n\t\t\tCONSULTA CLIENTE! Informe:");
 		do{
-			printf("\n\tInforme apenas os nÃºmeros do CPF(EX.:08673133637)- \n\tCPF: ");
+			printf("\n\tInforme apenas os numeros do CPF(EX.:08673133637)- \n\tCPF: ");
 			n = scanf("%d", &cpf);
 			LimpaBuffer();
 		}while(n == 0);
@@ -258,4 +258,29 @@ void hshcl_consulta(Hash* tab){
 }
 
 
+void hshcl_imprime(Hash* tab){
+	int i,n=0;
+	Limpa_Tela();
+	mensagem_inicial();
+	printf("\n\t\t\tTODOS OS CLIENTES:");
+	for( i=0;i<tab->dim;i++){
+		if(tab->v[i]!=NULL && tab->v[i]->status!=DELETED){
+			printf("\n\tNome: %s", tab->v[i]->nome);
+			printf("\tCPF: %d", tab->v[i]->cpf);
+			printf("\tTelefone: %s", tab->v[i]->telefone);
+			printf("\n\tCidade: %s", tab->v[i]->cidade);
+			printf("\tRua: %s", tab->v[i]->rua);
+			printf("\tNumero: %d", tab->v[i]->numero);
+			printf("\n\tBairro: %s", tab->v[i]->bairro);
+			printf("\tCEP: %s", tab->v[i]->cep);
+			printf("\tDebito: %.2f", tab->v[i]->debito);
+			n=1;
+		}
+	}
+	if(n==0){
+		printf("\n\t\tNenhum Cliente cadastrado!");
+	}
+	printf("\n----------------------------------------------------------------------------\n");
+	system("pause");
+}
 

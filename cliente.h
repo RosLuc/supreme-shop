@@ -17,6 +17,7 @@ Cliente* hshcl_busca (Hash* tab, int cpf);
 void hshcl_cadastra(Hash* tab);
 static void imprime(Cliente* c);
 void hshcl_consulta(Hash* tab);
+void hshcl_imprime(Hash* tab);
 
 #endif
 

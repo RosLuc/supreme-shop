@@ -1,2 +1,2 @@
 NOME	|CPF	|TELEFONE	|CIDADE	|RUA	|NUMERO	|BAIRRO	|CEP	|DEBITO
-ana	1	1	encanto	laranjeiras	32	sao luiz	59905000	0.00	
+ana	1	12	encanto	centro	32	centro	34567890	0.00	ana1	2	3	encanto	centro	45	centro	34567890	0.00	
