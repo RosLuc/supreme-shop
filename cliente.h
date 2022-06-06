@@ -18,7 +18,7 @@ void hshcl_cadastra(Hash* tab);
 static void imprime(Cliente* c);
 void hshcl_consulta(Hash* tab);
 void hshcl_imprime(Hash* tab);
-
+void hshcl_retirarcompleto(Hash* tab);
 #endif
 
 

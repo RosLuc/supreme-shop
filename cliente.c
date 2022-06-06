@@ -129,7 +129,7 @@ void hshcl_salva(Hash* tab){
 		system("pause");
 		exit(1);
 	}
-	fprintf(arq_cli, "NOME\t|CPF\t|TELEFONE\t|CIDADE\t|RUA\t|NUMERO\t|BAIRRO\t|CEP\t|DEBITO\n");
+	fprintf(arq_cli, "NOME\t|CPF\t|TELEFONE\t|CIDADE\t|RUA\t|NUMERO\t|BAIRRO\t|CEP\t|DEBITO\n\n");
 	int i;
 	for(i=0;i<tab->dim;i++){
 		if(tab->v[i]!=NULL && tab->v[i]->status!=DELETED){
@@ -141,7 +141,7 @@ void hshcl_salva(Hash* tab){
         	fprintf(arq_cli,"%d\t", tab->v[i]->numero);
         	fprintf(arq_cli,"%s\t", tab->v[i]->bairro);
         	fprintf(arq_cli,"%s\t", tab->v[i]->cep);
-        	fprintf(arq_cli,"%.2f\t", tab->v[i]->debito);
+        	fprintf(arq_cli,"%.2f\n", tab->v[i]->debito);
 		}
 	}
 	fclose(arq_cli);
@@ -284,3 +284,40 @@ void hshcl_imprime(Hash* tab){
 	system("pause");
 }
 
+void hshcl_retirarcompleto(Hash* tab){
+	int v=0,n=1;
+	do{
+		Limpa_Tela();
+		mensagem_inicial();
+	   	int cpf;
+		printf("\n\t\t\REMOVER CLIENTE! Informe:");
+		do{
+			printf("\n\tInforme apenas os numeros do CPF(EX.:08673133637)- \n\tCPF: ");
+			n = scanf("%d", &cpf);
+			LimpaBuffer();
+		}while(n == 0);
+		Cliente* cl=hshcl_busca(tab,cpf);
+		if(cl!=NULL){
+			int u;
+			n=0;
+			do{
+		   	printf("\n\tTem certeza que deseja realizar essa ação, não poderá ser desfeita?\n\tDigite (1) para SIM e (2) para NÃO:");
+		   	n=scanf("%d",&u);
+		   	LimpaBuffer();
+			}while(n<=0);
+		   	if(u==1){
+			   	cl->status=DELETED;
+				printf("\n----------------------------------------------------------------------------\n");
+				printf("\n\t\tCliente removido com sucesso!\n");
+			}
+		}
+		else{
+			printf("\n----------------------------------------------------------------------------\n");
+			printf("\n\t\tCliente não encontrado!\n");
+		}
+		hshcl_salva(tab);
+		system("pause");
+		Limpa_Tela();
+		v = sairdafuncao();
+	}while(v==0);
+}

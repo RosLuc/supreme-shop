@@ -21,7 +21,7 @@ void opcoes_cliente(Hash* TabCl){
                 hshcl_cadastra(TabCl);
                 break;
             case OPCA2:
-				//hshcl_retirarcompleto(TabCl);
+				hshcl_retirarcompleto(TabCl);
                 break;
             case OPCA3:
                 hshcl_consulta(TabCl);
