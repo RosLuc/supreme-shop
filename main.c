@@ -22,11 +22,11 @@ int main(int argc, char *argv[])
 		system("pause");
 		return 0;
 	}
-	Cliente *cliente = hshcl_cria();
-	if (!hshcl_importa(cliente))
+	Hash *tabCliente = hshcl_cria();
+	if (!hshcl_importa(tabCliente))
 	{
 		printf("\n\tErro ao importar usuario do arquivo!\n");
-		free(cliente);
+		free(tabCliente);
 		system("pause");
 		return 0;
 	}
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 			// interface_usuarios(sys, usu);
 
 			//   }
-			opcoes_do_sistema(cliente);
+			opcoes_do_sistema(tabCliente);
 
 			break;
 		case OPCAO2:

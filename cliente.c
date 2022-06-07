@@ -290,7 +290,7 @@ void hshcl_retirarcompleto(Hash* tab){
 		Limpa_Tela();
 		mensagem_inicial();
 	   	int cpf;
-		printf("\n\t\t\REMOVER CLIENTE! Informe:");
+		printf("\n\t\tREMOVER CLIENTE! Informe:");
 		do{
 			printf("\n\tInforme apenas os numeros do CPF(EX.:08673133637)- \n\tCPF: ");
 			n = scanf("%d", &cpf);
