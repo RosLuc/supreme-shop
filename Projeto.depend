@@ -86,3 +86,13 @@
 	"cliente.h"
 	"interacao_menus.h"
 
+1654358569 source:c:\users\rosen\documents\projetos\supreme-shop\interacao_menus.c
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	"interacao_menus.h"
+
+1654634186 c:\users\rosen\documents\projetos\supreme-shop\interacao_menus.h
+
