@@ -26,9 +26,6 @@
 #define O3 '3'
 #define O4 '4'
 
-
-
-
 // MEOPCOES VENDEDOR
 
 #define TITULO_OPC1 "CADASTRAR VENDEDOR"

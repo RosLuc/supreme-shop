@@ -26,76 +26,110 @@ struct arv
 	ArvNo *raiz;
 };
 
-UsuariosArv* sis_cria (void){
-    UsuariosArv* s = (UsuariosArv*)malloc(sizeof(UsuariosArv));
-    if(s == NULL){
-        printf("Erro na alocacão do usuário ao arv de usuários!\n");
-        system("pause");
-        exit(1);
-    }
-    s->raiz = NULL;
-    return s;
+UsuariosArv *cria_usuarios_arv(void)
+{
+	UsuariosArv *s = (UsuariosArv *)malloc(sizeof(UsuariosArv));
+	if (s == NULL)
+	{
+		printf("Erro na alocacão do usuário ao arv de usuários!\n");
+		system("pause");
+		exit(1);
+	}
+	s->raiz = NULL;
+	return s;
 }
 
-static ArvNo* insere(ArvNo* r, Usuario* u){
-	if(r == NULL){
-		r = (ArvNo*)malloc(sizeof(ArvNo));
-		if(u == NULL){
-            printf("Erro na alocaçãoo do nó no sistema!\n");
-            system("pause");
-            exit(1);
+static ArvNo *insere(ArvNo *r, Usuario *u)
+{
+	if (r == NULL)
+	{
+		r = (ArvNo *)malloc(sizeof(ArvNo));
+		if (u == NULL)
+		{
+			printf("Erro na alocaçãoo do nó no sistema!\n");
+			system("pause");
+			exit(1);
 		}
 		r->info = u;
 		r->esq = r->dir = NULL;
 	}
-	else if(strcmp(r->info->login, u->login) > 0)
+	else if (strcmp(r->info->login, u->login) > 0)
 		r->esq = insere(r->esq, u);
 	else
 		r->dir = insere(r->dir, u);
 	return r;
 }
 
-void insere_usuario_arv(UsuariosArv* a, Usuario* u){
+void insere_usuario_arv(UsuariosArv *a, Usuario *u)
+{
 	a->raiz = insere(a->raiz, u);
 }
 
-static Usuario* busca(ArvNo* r, char* login){
-    if(r != NULL){
-        if(strcmp(r->info->login, login) > 0)return busca(r->esq, login);
-        else if(strcmp(r->info->login, login) < 0)return busca(r->dir, login);
-        else return r->info;
-    }
-    return NULL;
+static Usuario *busca(ArvNo *r, char *login)
+{
+	if (r != NULL)
+	{
+		if (strcmp(r->info->login, login) > 0)
+			return busca(r->esq, login);
+		else if (strcmp(r->info->login, login) < 0)
+			return busca(r->dir, login);
+		else
+			return r->info;
+	}
+	return NULL;
 }
 
-Usuario* busca_usuario(UsuariosArv* s, char* login){
-    return busca(s->raiz, login);
+Usuario *busca_usuario(UsuariosArv *s, char *login)
+{
+	return busca(s->raiz, login);
 }
 
-static void salva (FILE* fp, ArvNo* r){
-    if(r != NULL){
-        salva(fp, r->esq);
-        fprintf(fp, "NOME:\t%s\nLOGIN:\t%s\nSENHA:\t%s\nPERFIL:\t%d\n\n", r->info->nome, r->info->login, r->info->senha, r->info->perfil);
-        salva(fp, r->dir);
-    }
+static void salva(FILE *fp, ArvNo *r)
+{
+	if (r != NULL)
+	{
+		salva(fp, r->esq);
+		fprintf(fp, "NOME:\t%s\nLOGIN:\t%s\nSENHA:\t%s\nPERFIL:\t%d\n\n", r->info->nome, r->info->login, r->info->senha, r->info->perfil);
+		salva(fp, r->dir);
+	}
 }
 
-void  salva_usuario(UsuariosArv* s){
-    FILE* fp = fopen("USUARIOS.txt", "wt");
-    if(fp == NULL){
-        printf("Erro na abertura do arquivo ao salvar o usu�rio");
-        system("pause");
-        exit(1);
-    }
-    salva(fp, s->raiz);
+void salva_usuario(UsuariosArv *s)
+{
+	FILE *fp = fopen("USUARIOS.txt", "wt");
+	if (fp == NULL)
+	{
+		printf("Erro na abertura do arquivo ao salvar o usu�rio");
+		system("pause");
+		exit(1);
+	}
+	salva(fp, s->raiz);
 }
 
-static Usuario* usuario_cadastra(char* nome, char* login, char* senha, int perfil){
-	Usuario* novo = (Usuario*) malloc(sizeof(Usuario));
-	if(novo == NULL){
-        printf("Erro na alocacão do usuario!\n");
-        system("pause");
-        exit(1);
+static void libera(ArvNo *a)
+{
+	if (a != NULL)
+	{
+		libera(a->esq);
+		libera(a->dir);
+		free(a);
+	}
+}
+
+void libera_usuarios(UsuariosArv *s)
+{
+	libera(s->raiz);
+	free(s);
+}
+
+static Usuario *usuario_cadastra(char *nome, char *login, char *senha, int perfil)
+{
+	Usuario *novo = (Usuario *)malloc(sizeof(Usuario));
+	if (novo == NULL)
+	{
+		printf("Erro na alocacão do usuario!\n");
+		system("pause");
+		exit(1);
 	}
 
 	strcpy(novo->nome, nome);
@@ -106,28 +140,32 @@ static Usuario* usuario_cadastra(char* nome, char* login, char* senha, int perfi
 	return novo;
 }
 
-int importa_usuarios(UsuariosArv* usuariosArv){
-    char nome[100];
-    char login[20];
-    char senha[20];
-    int perfil;
-    FILE* fp = fopen("USUARIOS.txt", "rt");
-    if(fp == NULL){
-        printf("\n\tErro na abertura do arquivo de usuario ao importar!\n");
-        system("pause");
-        return 0;
-    }
+int importa_usuarios(UsuariosArv *usuariosArv)
+{
+	char nome[100];
+	char login[20];
+	char senha[20];
+	int perfil;
+	FILE *fp = fopen("USUARIOS.txt", "rt");
+	if (fp == NULL)
+	{
+		printf("\n\tErro na abertura do arquivo de usuario ao importar!\n");
+		system("pause");
+		return 0;
+	}
 	int n = 0;
-	do{
+	do
+	{
 		n = fscanf(fp, "NOME:\t%99[^\n]\nLOGIN:\t%19[^\n]\nSENHA:\t%19[^\n]\nPERFIL:\t%d\n\n", nome, login, senha, &perfil);
-   		if(n > 0){
-			Usuario* usu = usuario_cadastra(nome, login, senha, perfil);
-        	insere_usuario_arv(usuariosArv, usu);
+		if (n > 0)
+		{
+			Usuario *usu = usuario_cadastra(nome, login, senha, perfil);
+			insere_usuario_arv(usuariosArv, usu);
 		}
 
-	}while(n > 0);
-    fclose(fp);
-    return 1;
+	} while (n > 0);
+	fclose(fp);
+	return 1;
 }
 
 void realiza_cadastro(UsuariosArv *s)
@@ -177,4 +215,39 @@ void realiza_cadastro(UsuariosArv *s)
 		Limpa_Tela();
 		v = sairdafuncao();
 	} while (v == 0);
+}
+
+Usuario *realiza_login(UsuariosArv *s)
+{
+	int v = 0;
+	do
+	{
+		char login[20];
+		char senha[20];
+		Limpa_Tela();
+		mensagem_inicial();
+		printf("\n\t\t\tREALIZAR LOGIN, Informe:");
+		printf("\n\tDigite seu login: ");
+		scanf(" %19[^\n]", login);
+		LimpaBuffer();
+		Usuario *ver = busca_usuario(s, login);
+		printf("\n\tDigite sua senha: ");
+		scanf(" %19[^\n]", senha);
+		LimpaBuffer();
+		printf("\n----------------------------------------------------------------------------");
+		if (ver != NULL && strcmp(ver->senha, senha) == 0)
+		{
+			printf("\n\t\tLogin realizado com sucesso!\n");
+			system("pause");
+			return ver;
+		}
+		else
+		{
+			printf("\n\t\tLogin ou senha incorreto!\n\t\t");
+			system("pause");
+			Limpa_Tela();
+			v = sairdafuncao();
+		}
+	} while (v == 0);
+	return NULL;
 }

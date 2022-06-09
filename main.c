@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
 	unsigned char op;
 	unsigned int fech = 0;
-	UsuariosArv *usuariosArv = sis_cria();
+	UsuariosArv *usuariosArv = cria_usuarios_arv();
 	if (!importa_usuarios(usuariosArv))
 	{
 		printf("\n\tErro ao importar usuario do arquivo!\n");
@@ -43,13 +43,11 @@ int main(int argc, char *argv[])
 		{
 		case OPCAO1:
 			Limpa_Tela();
-			// Usuario* usu = realiza_login(sys);
-			// f(usu != NULL){
-			// interface_usuarios(sys, usu);
-
-			//   }
-			opcoes_do_sistema(tabCliente);
-
+			Usuario *usu = realiza_login(usuariosArv);
+			if(usu != NULL)
+			{
+				opcoes_do_sistema(tabCliente);
+			}
 			break;
 		case OPCAO2:
 			Limpa_Tela();
@@ -65,8 +63,8 @@ int main(int argc, char *argv[])
 		}
 
 	} while (!fech);
-	/*sis_salva(sys);
-	sis_libera(sys);*/
+	salva_usuario(usuariosArv);
+	libera_usuarios(usuariosArv);
 
 	return 0;
 }

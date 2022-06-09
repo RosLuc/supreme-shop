@@ -2,12 +2,12 @@
 #define INTERFACE_H_INCLUDED
 
 #include "interacao_menus.h"
+#include "usuario.h"
 
 typedef struct cliente Cliente;
 typedef struct hash Hash;
 
 void opcoes_do_sistema();
-
 void opcoes_cliente();
 
 #endif
