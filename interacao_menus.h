@@ -17,7 +17,7 @@
 #define TITULO_O1 "CLIENTE"
 #define TITULO_O2 "ESTOQUE"
 #define TITULO_O3 "VENDEDOR"
-#define TITULO_O4 "VOLTAR"
+#define TITULO_O4 "DESLOGAR"
 
 #define N_O 4
 

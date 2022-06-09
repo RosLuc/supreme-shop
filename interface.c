@@ -68,6 +68,7 @@ void opcoes_do_sistema(Hash *TabCl)
             break;
         case O4:
             saida = 1;
+            printf("\n\t\tDeslogando...");
             break;
         default:
             printf("\n\tEste programa possui um bug.\n");
