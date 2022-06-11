@@ -96,3 +96,74 @@
 
 1654634186 c:\users\rosen\documents\projetos\supreme-shop\interacao_menus.h
 
+1654951272 source:c:\users\rosen\documents\projetos\supreme-shop2\cliente.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<time.h>
+	"cliente.h"
+
+1654636002 c:\users\rosen\documents\projetos\supreme-shop2\cliente.h
+	"interacao_menus.h"
+
+1654950611 c:\users\rosen\documents\projetos\supreme-shop2\interacao_menus.h
+
+1654951538 source:c:\users\rosen\documents\projetos\supreme-shop2\estoque.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+	<ctype.h>
+	"estoque.h"
+
+1654950686 c:\users\rosen\documents\projetos\supreme-shop2\estoque.h
+	"interacao_menus.h"
+
+1654358569 source:c:\users\rosen\documents\projetos\supreme-shop2\interacao_menus.c
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	"interacao_menus.h"
+
+1654952123 source:c:\users\rosen\documents\projetos\supreme-shop2\interface.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<time.h>
+	"cliente.h"
+	"usuario.h"
+	"estoque.h"
+
+1654801953 c:\users\rosen\documents\projetos\supreme-shop2\usuario.h
+	"interacao_menus.h"
+	"cliente.h"
+
+1654952045 source:c:\users\rosen\documents\projetos\supreme-shop2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<locale.h>
+	<string.h>
+	"cliente.h"
+	"interacao_menus.h"
+	"interface.h"
+	"usuario.h"
+	"estoque.h"
+
+1654950706 c:\users\rosen\documents\projetos\supreme-shop2\interface.h
+	"interacao_menus.h"
+	"usuario.h"
+	"estoque.h"
+
+1654951560 source:c:\users\rosen\documents\projetos\supreme-shop2\usuario.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<windows.h>
+	"usuario.h"
+
