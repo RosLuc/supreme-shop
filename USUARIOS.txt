@@ -1,5 +1,0 @@
-NOME:	rosendo
-LOGIN:	rosluc
-SENHA:	123
-PERFIL:	1
-
