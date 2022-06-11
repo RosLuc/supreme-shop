@@ -7,11 +7,12 @@
 #include "interacao_menus.h"
 #include "interface.h"
 #include "usuario.h"
+#include "estoque.h"
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[])
 {
-
+	setlocale(LC_ALL, "");
 	unsigned char op;
 	unsigned int fech = 0;
 	UsuariosArv *usuariosArv = cria_usuarios_arv();
@@ -25,8 +26,16 @@ int main(int argc, char *argv[])
 	Hash *tabCliente = hshcl_cria();
 	if (!hshcl_importa(tabCliente))
 	{
-		printf("\n\tErro ao importar usuario do arquivo!\n");
+		printf("\n\tErro ao importar cliente do arquivo!\n");
 		free(tabCliente);
+		system("pause");
+		return 0;
+	}
+	Hash_Est *tabEstoque = hshpro_cria();
+	if (!hshpro_importa(tabEstoque))
+	{
+		printf("\n\tErro ao importar estoque do arquivo!\n");
+		free(tabEstoque);
 		system("pause");
 		return 0;
 	}
@@ -44,9 +53,9 @@ int main(int argc, char *argv[])
 		case OPCAO1:
 			Limpa_Tela();
 			Usuario *usu = realiza_login(usuariosArv);
-			if(usu != NULL)
+			if (usu != NULL)
 			{
-				opcoes_do_sistema(tabCliente);
+				opcoes_do_sistema(tabCliente, tabEstoque);
 			}
 			break;
 		case OPCAO2:

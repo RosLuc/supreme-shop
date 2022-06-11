@@ -149,7 +149,13 @@ int importa_usuarios(UsuariosArv *usuariosArv)
 	FILE *fp = fopen("USUARIOS.txt", "rt");
 	if (fp == NULL)
 	{
-		printf("\n\tErro na abertura do arquivo de usuario ao importar!\n");
+		FILE *fp_temp = fopen("USUARIOS.txt", "wt");
+		fclose(fp_temp);
+	}
+	fp = fopen("USUARIOS.txt", "rt");
+	if (fp == NULL)
+	{
+		printf("\n\tErro ao abrir o arquivo USUARIOS.txt!\n");
 		system("pause");
 		return 0;
 	}

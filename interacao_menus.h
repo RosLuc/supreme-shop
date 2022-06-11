@@ -10,6 +10,22 @@
 #define OPCAO2 '2'
 #define OPCAO3 '3'
 
+// ATUALIZAR ESTOQUE 
+
+
+#define TITULO_OP1 "CADASTRAR PRODUTO"
+#define TITULO_OP2 "RETIRAR PRODUTO"
+#define TITULO_OP3 "LISTAR TODOS OS PRODUTOS"
+#define TITULO_OP4 "CONSULTAR PRODUTO"
+#define TITULO_OP5 "VOLTAR"
+
+#define N_OP 5
+
+#define OP1 '1'
+#define OP2 '2'
+#define OP3 '3'
+#define OP4 '4'
+#define OP5 '5'
 
 // OPCOES DO SISTEMA
 

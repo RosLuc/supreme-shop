@@ -5,6 +5,7 @@
 #include <time.h>
 #include "cliente.h"
 #include "usuario.h"
+#include "estoque.h"
 
 void opcoes_cliente(Hash *TabCl)
 {
@@ -43,7 +44,44 @@ void opcoes_cliente(Hash *TabCl)
     } while (!saida);
 }
 
-void opcoes_do_sistema(Hash *TabCl)
+void opcoes_estoque(Hash_Est *TabEst)
+{
+    char op;
+    unsigned int saida = 0;
+    do
+    {
+        Limpa_Tela();
+        mensagem_inicial();
+        printf("\n\t\t\tOPÇÔES DO ESTOQUE\n");
+        ApresentaMenu(N_OPA, OPA1, TITULO_OPA1, TITULO_OPA2, TITULO_OPA3, TITULO_OPA4, TITULO_OPA5);
+        printf("\n----------------------------------------------------------------------------");
+        op = LeOpcao(OPA1, OPA1 + N_OPA - 1);
+        switch (op)
+        {
+        case OP1:
+            hshpro_cadastra(TabEst);
+            break;
+        case OP2:
+            hshpro_retirarcompleto(TabEst);
+            break;
+        case OP3:
+            hshpro_imprime_td(TabEst);
+            break;
+        case OP4:
+            hshpro_consulta(TabEst);
+            break;
+        case OP5:
+            saida = 1;
+            break;
+        default:
+            printf("\n\tEste programa possui um bug.\n");
+            system("pause");
+            exit(1);
+        }
+    } while (!saida);
+}
+
+void opcoes_do_sistema(Hash *TabCl, Hash_Est *TabEst)
 {
     char op;
     unsigned int saida = 0;
@@ -61,7 +99,7 @@ void opcoes_do_sistema(Hash *TabCl)
             opcoes_cliente(TabCl);
             break;
         case O2:
-            printf("Aguardando..");
+            opcoes_estoque(TabEst);
             break;
         case O3:
             printf("Aguardando..");
