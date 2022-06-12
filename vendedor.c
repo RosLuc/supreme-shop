@@ -240,7 +240,7 @@ void imprime_vend_td (Hash_vend* vend){
 }
 void hshvl_consulta(Hash_vend *tab)
 {
-	int v = 1;
+	int count = 1;
 	do
 	{
 		Limpa_Tela();
@@ -260,20 +260,20 @@ void hshvl_consulta(Hash_vend *tab)
 		else
 		{
 			printf("\n----------------------------------------------------------------------------");
-			printf("\n\t\Vendedor nao cadastrado!\n");
+			printf("\n\tVendedor nao cadastrado!\n");
 			system("pause");
 		}
 		Limpa_Tela();
-		v = sairdafuncao();
+		count = sairdafuncao();
 
-	} while (v != 0);
+	} while (count != 0);
 
 }
 
 
 void hshvl_retirarcompleto(Hash_vend *tab)
 {
-	int v = 1;
+	int count = 1;
 	do
 	{
 		Limpa_Tela();
@@ -313,7 +313,7 @@ void hshvl_retirarcompleto(Hash_vend *tab)
 			system("pause");
 		}
 		Limpa_Tela();
-		v = sairdafuncao();
-	} while (v != 1);
+		count = sairdafuncao();
+	} while (count != 1);
 
 }

@@ -31,7 +31,7 @@ UsuariosArv *cria_usuarios_arv(void)
 	UsuariosArv *s = (UsuariosArv *)malloc(sizeof(UsuariosArv));
 	if (s == NULL)
 	{
-		printf("Erro na alocacão do usuário ao arv de usuários!\n");
+		printf("Erro na alocacao do usuário ao arv de usuários!\n");
 		system("pause");
 		exit(1);
 	}
@@ -46,7 +46,7 @@ static ArvNo *insere(ArvNo *r, Usuario *u)
 		r = (ArvNo *)malloc(sizeof(ArvNo));
 		if (u == NULL)
 		{
-			printf("Erro na alocaçãoo do nó no sistema!\n");
+			printf("Erro na alocacao do nó no sistema!\n");
 			system("pause");
 			exit(1);
 		}
@@ -182,7 +182,7 @@ void realiza_cadastro(UsuariosArv *s)
 		Usuario *novo = (Usuario *)malloc(sizeof(Usuario));
 		if (novo == NULL)
 		{
-			printf("Erro na alocacão do usuário ao cadastrar!\n");
+			printf("Erro na alocacao do usuário ao cadastrar!\n");
 			system("pause");
 			exit(1);
 		}

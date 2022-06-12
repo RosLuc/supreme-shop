@@ -349,7 +349,7 @@ void hshcl_retirarcompleto(Hash *tab)
 			n = 0;
 			do
 			{
-				printf("\n\tTem certeza que deseja realizar essa acao, não podera ser desfeita?\n\tDigite (1) para SIM e (2) para NAO:");
+				printf("\n\tTem certeza que deseja realizar essa acao, nao podera ser desfeita?\n\tDigite (1) para SIM e (2) para NAO:");
 				n = scanf("%d", &u);
 				LimpaBuffer();
 			} while (n <= 0);
@@ -363,7 +363,7 @@ void hshcl_retirarcompleto(Hash *tab)
 		else
 		{
 			printf("\n----------------------------------------------------------------------------\n");
-			printf("\n\t\tCliente não encontrado!\n");
+			printf("\n\t\tCliente nao encontrado!\n");
 		}
 		hshcl_salva(tab);
 		system("pause");
