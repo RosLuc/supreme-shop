@@ -10,7 +10,7 @@
 #define OPCAO2 '2'
 #define OPCAO3 '3'
 
-// ATUALIZAR ESTOQUE 
+// ATUALIZAR ESTOQUE
 
 
 #define TITULO_OP1 "CADASTRAR PRODUTO"
@@ -50,14 +50,13 @@
 #define TITULO_OPC4 "BUSCAR VENDEDOR"
 #define TITULO_OPC5 "VOLTAR"
 
-#define N_OPC 6
+#define N_OPC 5
 
 #define OPC1 '1'
 #define OPC2 '2'
 #define OPC3 '3'
 #define OPC4 '4'
 #define OPC5 '5'
-#define OPC6 '6'
 
 
 // ATUALIZAR ESTOQUE

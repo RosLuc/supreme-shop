@@ -8,7 +8,7 @@
 #include "interface.h"
 #include "usuario.h"
 #include "estoque.h"
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+#include "vendedor.h"
 
 int main(int argc, char *argv[])
 {
@@ -39,6 +39,15 @@ int main(int argc, char *argv[])
 		system("pause");
 		return 0;
 	}
+	Hash_vend *tabVendedor = hshvl_cria();
+	if (!hshvl_importa(tabVendedor))
+	{
+		printf("\n\tErro ao importar estoque do arquivo!\n");
+		free(tabVendedor);
+		system("pause");
+		return 0;
+	}
+
 	do
 	{
 		Limpa_Tela();
@@ -55,7 +64,7 @@ int main(int argc, char *argv[])
 			Usuario *usu = realiza_login(usuariosArv);
 			if (usu != NULL)
 			{
-				opcoes_do_sistema(tabCliente, tabEstoque);
+				opcoes_do_sistema(tabCliente, tabEstoque, tabVendedor);
 			}
 			break;
 		case OPCAO2:

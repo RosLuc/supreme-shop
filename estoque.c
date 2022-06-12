@@ -102,7 +102,7 @@ Produto *hshpro_busca(Hash_Est *tab, int codigo)
 
 void hshpro_imprime_td(Hash_Est *tab)
 {
-	int i;
+	int i, n = 0;
 	Limpa_Tela();
 	mensagem_inicial();
 	printf("\n----------------------------------------------------------------------------");
@@ -111,14 +111,19 @@ void hshpro_imprime_td(Hash_Est *tab)
 	{
 		if (tab->v[i] != NULL && tab->v[i]->status != DELETED)
 		{
-			printf("\n\tC�digo: %d", tab->v[i]->codigo);
+			printf("\n\tCodigo: %d", tab->v[i]->codigo);
 			printf("\tTipo: %s", tab->v[i]->tipo);
 			printf("\tMarca: %s", tab->v[i]->marca);
 			printf("\n\tCor: %s", tab->v[i]->cor);
 			printf("\tTamanho: %c", tab->v[i]->tamanho);
 			printf("\tQuantidade: %d", tab->v[i]->quantidade);
-			printf("\tPre�o: %.2f\n", tab->v[i]->preco);
+			printf("\tPreco: %.2f\n", tab->v[i]->preco);
+			n = 1;
 		}
+	}
+	if (n == 0)
+	{
+		printf("\n\t\tNenhum produto cadastrado!");
 	}
 	printf("\n----------------------------------------------------------------------------\n");
 	system("pause");
@@ -155,7 +160,7 @@ int hshpro_importa(Hash_Est *tab)
 		Produto *p = (Produto *)malloc(sizeof(Produto));
 		if (p == NULL)
 		{
-			printf("\n\tErro ao alocar produto na importa��o!\n");
+			printf("\n\tErro ao alocar produto na importacao!\n");
 			system("pause");
 			return 0;
 		}
@@ -216,7 +221,7 @@ void hshpro_cadastra(Hash_Est *tab)
 		printf("\n\t\t\tCADASTRAR PRODUTO! Informe:");
 		do
 		{
-			printf("\n\tC�digo (Apenas n�meros): ");
+			printf("\n\tCodigo (Apenas numeros): ");
 			n = scanf(" %d", &p->codigo);
 			LimpaBuffer();
 		} while (n == 0);
@@ -233,10 +238,10 @@ void hshpro_cadastra(Hash_Est *tab)
 		p->tamanho = getchar();
 		p->tamanho = toupper(p->tamanho);
 		LimpaBuffer();
-		printf("\n\tQuantas pe�as: ");
+		printf("\n\tQuantas pecas: ");
 		n = scanf(" %d", &p->quantidade);
 		LimpaBuffer();
-		printf("\n\tPre�o: ");
+		printf("\n\tPreco: ");
 		n = scanf(" %f", &p->preco);
 		LimpaBuffer();
 		p->status = 0;
@@ -260,13 +265,13 @@ void hshpro_cadastra(Hash_Est *tab)
 
 static void imprime(Produto *p)
 {
-	printf("\n\tC�digo: %d\t", p->codigo);
+	printf("\n\tCodigo: %d\t", p->codigo);
 	printf("\tTipo: %s\t", p->tipo);
 	printf("\tMarca: %s\t", p->marca);
 	printf("\tCor: %s\t", p->cor);
 	printf("\n\tTamanho: %c\t", p->tamanho);
 	printf("\tQuantidade: %d\t", p->quantidade);
-	printf("\tPre�o: %.2f\n", p->preco);
+	printf("\tPreco: %.2f\n", p->preco);
 }
 
 void hshpro_consulta(Hash_Est *tab)
@@ -278,7 +283,7 @@ void hshpro_consulta(Hash_Est *tab)
 		mensagem_inicial();
 		int cod;
 		printf("\n\t\t\tCONSULTAR PRODUTO! Informe:");
-		printf("\n\tC�digo: ");
+		printf("\n\tCodigo: ");
 		scanf("%d", &cod);
 		LimpaBuffer();
 		Produto *p = hshpro_busca(tab, cod);
@@ -291,7 +296,7 @@ void hshpro_consulta(Hash_Est *tab)
 		else
 		{
 			printf("\n----------------------------------------------------------------------------");
-			printf("\n\t\tProduto n�o est� cadastrado!\n");
+			printf("\n\t\tProduto nao esta cadastrado!\n");
 			system("pause");
 		}
 		Limpa_Tela();
@@ -308,7 +313,7 @@ void hshpro_retirarcompleto(Hash_Est *tab)
 		mensagem_inicial();
 		int cod;
 		printf("\n\t\t\tEXCLUIR PRODUTO DO ESTOQUE! Informe:");
-		printf("\n\tC�digo: ");
+		printf("\n\tCodigo: ");
 		scanf("%d", &cod);
 		LimpaBuffer();
 		Produto *p = hshpro_busca(tab, cod);
@@ -317,7 +322,7 @@ void hshpro_retirarcompleto(Hash_Est *tab)
 			int a;
 			do
 			{
-				printf("\n\tTem certeza que deseja exclui?\n\tDigite (1) para SIM e (2) para N�O:");
+				printf("\n\tTem certeza que deseja exclui?\n\tDigite (1) para SIM e (2) para NAO:");
 				scanf("%d", &a);
 				LimpaBuffer();
 			} while (a != 1 && a != 2);
@@ -331,13 +336,13 @@ void hshpro_retirarcompleto(Hash_Est *tab)
 			else
 			{
 				printf("\n----------------------------------------------------------------------------\n");
-				printf("\n\tCancelada � a��o!\n");
+				printf("\n\tCancelada !\n");
 				system("pause");
 			}
 		}
 		else
 		{
-			printf("\n\t\tProduto n�o encontrado!\n");
+			printf("\n\t\tProduto nao encontrado!\n");
 			system("pause");
 		}
 		Limpa_Tela();

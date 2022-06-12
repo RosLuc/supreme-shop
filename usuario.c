@@ -99,7 +99,7 @@ void salva_usuario(UsuariosArv *s)
 	FILE *fp = fopen("USUARIOS.txt", "wt");
 	if (fp == NULL)
 	{
-		printf("Erro na abertura do arquivo ao salvar o usu�rio");
+		printf("Erro na abertura do arquivo ao salvar o usuario");
 		system("pause");
 		exit(1);
 	}
@@ -127,7 +127,7 @@ static Usuario *usuario_cadastra(char *nome, char *login, char *senha, int perfi
 	Usuario *novo = (Usuario *)malloc(sizeof(Usuario));
 	if (novo == NULL)
 	{
-		printf("Erro na alocacão do usuario!\n");
+		printf("Erro na alocacao do usuario!\n");
 		system("pause");
 		exit(1);
 	}
@@ -187,8 +187,8 @@ void realiza_cadastro(UsuariosArv *s)
 			exit(1);
 		}
 		mensagem_inicial();
-		printf("\n\t\t\tCADASTRAR USUÁRIO!\n");
-		printf("\n\t\tÉ obrigatório o preenchimento de todos os campos.\n");
+		printf("\n\t\t\tCADASTRAR USUARIO!\n");
+		printf("\n\t\tE obrigatório o preenchimento de todos os campos.\n");
 		printf("\n\tDigite seu nome: ");
 		scanf(" %99[^\n]", novo->nome);
 		LimpaBuffer();

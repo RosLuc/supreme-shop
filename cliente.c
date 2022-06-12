@@ -349,7 +349,7 @@ void hshcl_retirarcompleto(Hash *tab)
 			n = 0;
 			do
 			{
-				printf("\n\tTem certeza que deseja realizar essa ação, não poderá ser desfeita?\n\tDigite (1) para SIM e (2) para NÃO:");
+				printf("\n\tTem certeza que deseja realizar essa acao, não podera ser desfeita?\n\tDigite (1) para SIM e (2) para NAO:");
 				n = scanf("%d", &u);
 				LimpaBuffer();
 			} while (n <= 0);

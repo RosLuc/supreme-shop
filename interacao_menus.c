@@ -16,15 +16,15 @@ void LimpaBuffer(void) {
 int LeOpcao(int menorValor, int maiorValor){
     int op;
     while (1) {
-        printf("\nDigite sua opção: ");
+        printf("\nDigite sua opcao: ");
         op = getchar();
         if (op >= menorValor && op <= maiorValor) {
             LimpaBuffer();
             break;
         }
         else {
-            printf("\n\t\tOpção invalida. Tente novamente.");
-            printf("\n\t\tA opção deve estar entre %c e %c.\n", menorValor, maiorValor);
+            printf("\n\t\tOpcao invalida. Tente novamente.");
+            printf("\n\t\tA opcao deve estar entre %c e %c.\n", menorValor, maiorValor);
             printf("\n\t\tEnter para tentar novamente!");
             LimpaBuffer();
         }

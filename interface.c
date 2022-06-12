@@ -6,6 +6,7 @@
 #include "cliente.h"
 #include "usuario.h"
 #include "estoque.h"
+#include "vendedor.h"
 
 void opcoes_cliente(Hash *TabCl)
 {
@@ -15,7 +16,7 @@ void opcoes_cliente(Hash *TabCl)
     {
         Limpa_Tela();
         mensagem_inicial();
-        printf("\n\t\t\tMENU DE CLIENTES\n");
+        printf("\n\t\t\tOPCAO DE CLIENTES\n");
         ApresentaMenu(N_OPCA, OPCA1, TITULO_OPCA1, TITULO_OPCA2, TITULO_OPCA3, TITULO_OPCA4, TITULO_OPCA5);
         printf("\n----------------------------------------------------------------------------");
         op = LeOpcao(OPCA1, OPCA1 + N_OPCA - 1);
@@ -52,7 +53,7 @@ void opcoes_estoque(Hash_Est *TabEst)
     {
         Limpa_Tela();
         mensagem_inicial();
-        printf("\n\t\t\tOPÇÔES DO ESTOQUE\n");
+        printf("\n\t\t\tOPCOES DO ESTOQUE\n");
         ApresentaMenu(N_OPA, OPA1, TITULO_OPA1, TITULO_OPA2, TITULO_OPA3, TITULO_OPA4, TITULO_OPA5);
         printf("\n----------------------------------------------------------------------------");
         op = LeOpcao(OPA1, OPA1 + N_OPA - 1);
@@ -81,7 +82,9 @@ void opcoes_estoque(Hash_Est *TabEst)
     } while (!saida);
 }
 
-void opcoes_do_sistema(Hash *TabCl, Hash_Est *TabEst)
+
+
+void opcoes_vendedor(Hash_vend *TabVend)
 {
     char op;
     unsigned int saida = 0;
@@ -89,7 +92,45 @@ void opcoes_do_sistema(Hash *TabCl, Hash_Est *TabEst)
     {
         Limpa_Tela();
         mensagem_inicial();
-        printf("\n\t\t\tOPÇÕES\n");
+        printf("\n\t\t\tOPCOES DO VENDEDOR\n");
+        ApresentaMenu(N_OPC, OPC1, TITULO_OPC1, TITULO_OPC2, TITULO_OPC3, TITULO_OPC4, TITULO_OPC5);
+        printf("\n----------------------------------------------------------------------------");
+        op = LeOpcao(OPC1, OPC1 + N_OPC - 1);
+        switch (op)
+        {
+        case OP1:
+            vendedor_cadastra(TabVend);
+            break;
+        case OP2:
+            hshvl_retirarcompleto(TabVend);
+            break;
+        case OP3:
+            imprime_vend_td(TabVend);
+            break;
+        case OP4:
+            hshvl_consulta(TabVend);
+            break;
+        case OP5:
+            saida = 1;
+            break;
+        default:
+            printf("\n\tEste programa possui um bug.\n");
+            system("pause");
+            exit(1);
+        }
+    } while (!saida);
+}
+
+
+void opcoes_do_sistema(Hash *TabCl, Hash_Est *TabEst, Hash_vend *TabVend)
+{
+    char op;
+    unsigned int saida = 0;
+    do
+    {
+        Limpa_Tela();
+        mensagem_inicial();
+        printf("\n\t\t\tOPCOES\n");
         ApresentaMenu(N_O, O1, TITULO_O1, TITULO_O2, TITULO_O3, TITULO_O4);
         printf("\n----------------------------------------------------------------------------");
         op = LeOpcao(O1, O1 + N_O - 1);
@@ -102,7 +143,7 @@ void opcoes_do_sistema(Hash *TabCl, Hash_Est *TabEst)
             opcoes_estoque(TabEst);
             break;
         case O3:
-            printf("Aguardando..");
+            opcoes_vendedor(TabVend);
             break;
         case O4:
             saida = 1;
