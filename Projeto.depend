@@ -1,0 +1,217 @@
+# depslib dependency file v1.0
+1653783203 source:d:\usuario\Área de trabalho\projeto\projeto\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<locale.h>
+	<string.h>
+	"usuario.h"
+	"interacao_menus.h"
+
+1653775482 source:d:\usuario\Área de trabalho\projeto\projeto\interacao_menus.c
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	"interacao_menus.h"
+
+1653789691 d:\usuario\Área de trabalho\projeto\projeto\interacao_menus.h
+
+1653790108 source:d:\usuario\Área de trabalho\projeto\projeto\cliente.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<time.h>
+	"cliente.h"
+
+1653782325 d:\usuario\Área de trabalho\projeto\projeto\cliente.h
+	"interacao_menus.h"
+
+1653781128 source:d:\usuario\Área de trabalho\projeto\projeto\usuario.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	"usuario.h"
+
+1653781315 d:\usuario\Área de trabalho\projeto\projeto\usuario.h
+	"interacao_menus.h"
+	"cliente.h"
+
+1653783256 source:d:\usuario\Área de trabalho\projeto\projeto\interface.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<time.h>
+	"cliente.h"
+
+1654977472 source:c:\users\public\documents\supreme-shop\cliente.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<time.h>
+	"cliente.h"
+
+1654977472 c:\users\public\documents\supreme-shop\cliente.h
+	"interacao_menus.h"
+
+1654983273 c:\users\public\documents\supreme-shop\interacao_menus.h
+
+1654984467 source:c:\users\public\documents\supreme-shop\interacao_menus.c
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	"interacao_menus.h"
+
+1654984440 source:c:\users\public\documents\supreme-shop\interface.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<time.h>
+	"cliente.h"
+	"usuario.h"
+	"estoque.h"
+	"vendedor.h"
+
+1654995818 source:c:\users\public\documents\supreme-shop\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<locale.h>
+	<string.h>
+	"cliente.h"
+	"interacao_menus.h"
+	"interface.h"
+	"usuario.h"
+	"estoque.h"
+	"vendedor.h"
+
+1654358569 source:c:\users\rosen\documents\projetos\supreme-shop\interacao_menus.c
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	"interacao_menus.h"
+
+1654634186 c:\users\rosen\documents\projetos\supreme-shop\interacao_menus.h
+
+1654951272 source:c:\users\rosen\documents\projetos\supreme-shop2\cliente.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<time.h>
+	"cliente.h"
+
+1654636002 c:\users\rosen\documents\projetos\supreme-shop2\cliente.h
+	"interacao_menus.h"
+
+1654950611 c:\users\rosen\documents\projetos\supreme-shop2\interacao_menus.h
+
+1654951538 source:c:\users\rosen\documents\projetos\supreme-shop2\estoque.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+	<ctype.h>
+	"estoque.h"
+
+1654950686 c:\users\rosen\documents\projetos\supreme-shop2\estoque.h
+	"interacao_menus.h"
+
+1654358569 source:c:\users\rosen\documents\projetos\supreme-shop2\interacao_menus.c
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	"interacao_menus.h"
+
+1654952123 source:c:\users\rosen\documents\projetos\supreme-shop2\interface.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<time.h>
+	"cliente.h"
+	"usuario.h"
+	"estoque.h"
+
+1654801953 c:\users\rosen\documents\projetos\supreme-shop2\usuario.h
+	"interacao_menus.h"
+	"cliente.h"
+
+1654952045 source:c:\users\rosen\documents\projetos\supreme-shop2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<locale.h>
+	<string.h>
+	"cliente.h"
+	"interacao_menus.h"
+	"interface.h"
+	"usuario.h"
+	"estoque.h"
+
+1654950706 c:\users\rosen\documents\projetos\supreme-shop2\interface.h
+	"interacao_menus.h"
+	"usuario.h"
+	"estoque.h"
+
+1654951560 source:c:\users\rosen\documents\projetos\supreme-shop2\usuario.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<windows.h>
+	"usuario.h"
+
+1654995288 source:c:\users\public\documents\supreme-shop\estoque.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+	<ctype.h>
+	"estoque.h"
+
+1654977472 c:\users\public\documents\supreme-shop\estoque.h
+	"interacao_menus.h"
+
+1654977472 c:\users\public\documents\supreme-shop\usuario.h
+	"interacao_menus.h"
+	"cliente.h"
+
+1654995643 source:c:\users\public\documents\supreme-shop\usuario.c
+	<stdio.h>
+	<string.h>
+	<locale.h>
+	<stdlib.h>
+	<windows.h>
+	"usuario.h"
+
+1654983427 c:\users\public\documents\supreme-shop\interface.h
+	"interacao_menus.h"
+	"usuario.h"
+	"estoque.h"
+	"vendedor.h"
+
+1654982636 c:\users\public\documents\supreme-shop\vendedor.h
+	"interacao_menus.h"
+
+1654995771 source:c:\users\public\documents\supreme-shop\vendedor.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	"vendedor.h"
+
