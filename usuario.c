@@ -3,7 +3,6 @@
 #include <string.h>
 #include <locale.h>
 #include <stdlib.h>
-#include <windows.h>
 #include "usuario.h"
 
 struct usuario
